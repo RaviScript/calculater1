@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/js/index.js">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-md-12">
+                <form action="#" name="calculater" class="main">
+                    <input type="text" class="display form-control" id="outputscreen" placeholder="0"><br><br>
+                    <button onclick="CL()" class="btn btn-primary">CL</button>
+                    <button onclick="del()" class="btn btn-danger ms-3">Dl</button>
+                    <button onclick="display('%')" class="btn btn-primary ms-3">%</button>
+                    <button onclick="display('/')" class="btn btn-outline-danger ms-3 text-light">/</button><br><br>
+                    <button onclick="display('7')" class="btn btn-primary">7</button>
+                    <button onclick="display('8')" class="btn btn-primary ms-3">8</button>
+                    <button onclick="display('9')" class="btn btn-primary ms-3">9</button>
+                    <button onclick="display('*')" class="btn btn-outline-info ms-3 text-light">*</button><br><br>
+                    <button onclick="display('4')" class="btn btn-primary">4</button>
+                    <button onclick="display('5')" class="btn btn-primary ms-3">5</button>
+                    <button onclick="display('6')" class="btn btn-primary ms-3">6</button>
+                    <button onclick="display('-')" class="btn btn-outline-primary ms-3 text-light">-</button><br><br>
+                    <button onclick="display('1')" class="btn btn-primary">1</button>
+                    <button onclick="display('2')" class="btn btn-primary ms-3">2</button>
+                    <button onclick="display('3')" class="btn btn-primary ms-3">3</button>
+                    <button onclick="display('+')" class="btn btn-outline-warning ms-3 text-light">+</button><br><br>
+                    <button onclick="display('.')" class="btn btn-secondary">.</button>
+                    <button onclick="display('0')" class="btn btn-primary ms-3">0</button>
+                    <button onclick="display('00')" class="btn btn-primary ms-3">00</button>
+                    <button onclick="calculate('=')" class="btn btn-outline-success ms-3 text-light">=</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+         let outputscreen = document.getElementById("outputscreen");
+        function display(num) {
+            outputscreen.value += num;
+        }
+         function calculate(){
+             try{
+                outputscreen.value = eval(outputscreen.value);
+             }
+             catch(err){
+               alert("invalid")
+             }
+         }
+         function clear(){
+            outputscreen.value = outputscreen.value ="";
+         }
+         function del(){
+            outputscreen.value = outputscreen.value.slice(0,-1);
+         }
+    </script>
+
+
+
+
+
+
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquerry.min.js"></script>
+</body>
+
+</html>
